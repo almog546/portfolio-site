@@ -1,126 +1,155 @@
-:root {
-  --bg: #0f172a;
-  --card-bg: #1e293b;
-  --text: #f8fafc;
-  --muted: #94a3b8;
-  --accent: #38bdf8;
-  --border: rgba(255, 255, 255, 0.1);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.5;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-.page {
+.portfolio-page {
+  padding: 60px 20px;
   display: flex;
   justify-content: center;
-  padding: 60px 20px;
 }
 
-.container {
-  max-width: 900px;
+.main-container {
+  max-width: 800px;
   width: 100%;
 }
 
-.hero {
-  text-align: center;
-  margin-bottom: 60px;
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin: 0;
-  background: linear-gradient(90deg, #38bdf8, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.role {
-  font-size: 1.25rem;
-  color: var(--accent);
-  font-weight: 600;
-  margin-top: 8px;
-}
-
-.intro {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 500px;
-  margin: 20px auto;
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-bottom: 80px;
-}
-
-.card {
-  background: var(--card-bg);
-  padding: 24px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-
-.card h3 {
-  margin: 0 0 12px 0;
+.section-title {
   font-size: 1.4rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #000000;
+  display: inline-block;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.card p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 24px;
+.profile-header {
+  margin-bottom: 70px;
+  text-align: left;
 }
 
-.links {
+.name_title {
+  font-size: 3.5rem;
+  margin-bottom: 0;
+}
+
+.job-title {
+  font-size: 1.2rem;
+  color: #666666;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.profile-summary {
+  font-size: 1.1rem;
+  max-width: 600px;
+  color: #333333;
+}
+
+.projects-section {
+  margin-bottom: 70px;
+}
+
+.projects-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.project-card {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.project-card:last-child {
+  border-bottom: none;
+}
+
+.project-name {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.project-description {
+  color: #444444;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  max-width: 700px;
+}
+
+.project-actions {
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
-.links a {
+.btn-link {
   text-decoration: none;
-  color: var(--accent);
-  font-weight: 500;
+  color: #000000;
   font-size: 0.9rem;
-  padding: 6px 12px;
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  transition: all 0.2s;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #000000;
+  transition: opacity 0.2s ease;
 }
 
-.links a:hover {
-  background: var(--accent);
-  color: var(--bg);
+.btn-link:hover {
+  opacity: 0.6;
 }
 
-.footer {
-  text-align: center;
-  border-top: 1px solid var(--border);
+.contact-footer {
   padding-top: 40px;
+  border-top: 2px solid #000000;
+  margin-top: 40px;
 }
 
-.footerp {
-  margin: 8px 0;
-  color: var(--muted);
+.contact-info {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
-.footerp a {
-  color: var(--text);
+.contact-info a {
+  color: #000000;
   text-decoration: none;
+  font-weight: 600;
 }
 
-.footerp a:hover {
-  color: var(--accent);
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  color: #dddddd;
+}
+
+@media (max-width: 600px) {
+  .portfolio-page {
+    padding: 40px 20px;
+  }
+  
+  .name_title {
+    font-size: 2.5rem;
+  }
+  
+  .project-actions {
+    gap: 15px;
+  }
 }
